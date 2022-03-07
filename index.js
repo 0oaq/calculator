@@ -8,3 +8,11 @@ console.log(browserType.length);
 console.log(browserType[0]);
 browserType[browserType.length-1];
 console.log(browserType[browserType.length-1]);
+
+const apple = 'apple';
+
+if (apple.endsWith('pple')){
+    console.log("found pple")
+} else {
+    console.log("no pple here")
+}
