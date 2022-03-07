@@ -16,3 +16,9 @@ if (apple.endsWith('pple')){
 } else {
     console.log("no pple here")
 }
+console.log(browserType.slice(2));
+
+const radData = 'My NaMe Is MuD';
+console.log(radData.toLowerCase);
+
+
