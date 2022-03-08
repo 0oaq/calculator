@@ -21,4 +21,9 @@ console.log(browserType.slice(2));
 const radData = 'My NaMe Is MuD';
 console.log(radData.toLowerCase);
 
+let myInt = 5;
+let myFloat = 6.667;
 
+if (apple.startsWith('app')){
+    console.log('e')
+}
