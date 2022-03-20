@@ -1,16 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <p>Hello, world!</p>
+    <div class="resultParas">
+        <p class="CalculatorResultsField"></p>
+    </div>
+    FUFF
     
-</body>
+<script defer>
 
-</html>
+function getCalculatorResultsField()
+{
+  return document.querySelector('.CalculatorResultsField');
+}
+
+
+class Calculator
+{
+    constructor() 
+    {
+			this.ResultsField = null;
+      this.Reset();
+    }
+    
+    Reset()
+    {
+			//reset the default state of the calculator
+			this.InternalTotal = 0;
+			this.InternalTextBuffer = '';
+			this.OperandArray = []
+			this.OperatorArray = []
+      this.SetDisplay(this.InternalTotal.toString());
+    }
+
+    SetDisplay(InString)
+    {
+      if (this.ResultsField != null)
+      {
+        this.ResultsField.textContent = InString
+      }
+    }
+
+    SetTextField(InTextField)
+    {
+      this.ResultsField = InTextField;
+      this.SetDisplay(this.InternalTotal.toString());
+    }
+    
+    PushCalculatorKey(InKey)
+    {
+    	// DO CALCULATOR WORK HERE! 
+    	if ((InKey >= '0') && (InKey <= '9'))
+    	{
+     		this.InternalTextBuffer += InKey;
+
+    	  //let IntValue = InKey - '0';
+      	//console.log("DIGIT!")
+    	}
+    	else if (InKey == 'c')
+    	{
+    	  this.Reset();
+    	}
+    	else if (InKey == '+')
+    	{
+      	//setDisplY
+       	//addition and other maths
+    	}
+    	//this.OperandArray 
+    	
+    
+      this.SetDisplay(this.InternalTextBuffer);
+      console.log(InKey +  "     " + this.InternalTextBuffer);
+    }
+    
+}
+
+function RunUnitTests()
+{
+    MyCalculator = new Calculator()
+    MyCalculator.SetTextField( getCalculatorResultsField() )
+
+    //THREE DIGIT NUMBER
+    MyCalculator.PushCalculatorKey('c')
+    MyCalculator.PushCalculatorKey('1')
+    MyCalculator.PushCalculatorKey('2')
+    MyCalculator.PushCalculatorKey('3')
+
+    
+
+    //simple addition
+/*    MyCalculator.PushCalculatorKey('c')
+    MyCalculator.PushCalculatorKey('1')
+    MyCalculator.PushCalculatorKey('+')
+    MyCalculator.PushCalculatorKey('2')
+    MyCalculator.PushCalculatorKey('=')
+    */
+
+    //order of operations
+/*
+    MyCalculator.PushCalculatorKey('c')
+    MyCalculator.PushCalculatorKey('1')
+    MyCalculator.PushCalculatorKey('+')
+    MyCalculator.PushCalculatorKey('2')
+    MyCalculator.PushCalculatorKey('*')
+    MyCalculator.PushCalculatorKey('3')
+    MyCalculator.PushCalculatorKey('=')
+*/
+
+    //Double Digits and order of operations
+    //15+2*3)
+/*    PushCalculatorKey('c')
+    PushCalculatorKey('1')
+    PushCalculatorKey('5')
+    PushCalculatorKey('+')
+    PushCalculatorKey('2')
+    PushCalculatorKey('*')
+    PushCalculatorKey('3')
+    PushCalculatorKey('=')
+*/
+    /*
+    //3*(7+2*3)
+    PushCalculatorKey('c')
+    PushCalculatorKey('3')
+    PushCalculatorKey('*')
+    PushCalculatorKey('(')
+    PushCalculatorKey('7')
+
+    PushCalculatorKey('+')
+    PushCalculatorKey('2')
+    PushCalculatorKey('*')
+    PushCalculatorKey('3')
+    PushCalculatorKey(')')
+    PushCalculatorKey('=')
+    */
+
+    //TODO! - ADD DECIMALS!
+}
+
+RunUnitTests();
+
+</script>
