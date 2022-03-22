@@ -1,138 +1,137 @@
+<div class="resultParas">
+  <p class="CalculatorResultsField"></p>
+</div>
+FUFF
 
-    <div class="resultParas">
-        <p class="CalculatorResultsField"></p>
-    </div>
-    FUFF
-    
 <script defer>
 
-function getCalculatorResultsField()
-{
-  return document.querySelector('.CalculatorResultsField');
-}
+  function getCalculatorResultsField() {
+    return document.querySelector('.CalculatorResultsField');
+  }
 
 
-class Calculator
-{
-    constructor() 
-    {
-			this.ResultsField = null;
+  class Calculator {
+    constructor() {
+      this.ResultsField = null;
       this.Reset();
     }
-    
-    Reset()
-    {
-			//reset the default state of the calculator
-			this.InternalTotal = 0;
-			this.InternalTextBuffer = '';
-			this.OperandArray = []
-			this.OperatorArray = []
+
+    Reset() {
+      //reset the default state of the calculator
+      this.InternalTotal = 0;
+      this.InternalTextBuffer = '';
+      this.OperandArray = []
+      this.OperatorArray = []
       this.SetDisplay(this.InternalTotal.toString());
     }
 
-    SetDisplay(InString)
-    {
-      if (this.ResultsField != null)
-      {
+    SetDisplay(InString) {
+      if (this.ResultsField != null) {
         this.ResultsField.textContent = InString
       }
     }
 
-    SetTextField(InTextField)
-    {
+    SetTextField(InTextField) {
       this.ResultsField = InTextField;
       this.SetDisplay(this.InternalTotal.toString());
     }
-    
-    PushCalculatorKey(InKey)
-    {
-    	// DO CALCULATOR WORK HERE! 
-    	if ((InKey >= '0') && (InKey <= '9'))
-    	{
-     		this.InternalTextBuffer += InKey;
 
-    	  //let IntValue = InKey - '0';
-      	//console.log("DIGIT!")
-    	}
-    	else if (InKey == 'c')
-    	{
-    	  this.Reset();
-    	}
-    	else if (InKey == '+')
-    	{
-      	//setDisplY
-       	//addition and other maths
-    	}
-    	//this.OperandArray 
-    	
-    
+    PushCalculatorKey(InKey) {
+      // DO CALCULATOR WORK HERE! 
+      if ((InKey >= '0') && (InKey <= '9')) {
+        this.InternalTextBuffer += InKey;
+
+        //let IntValue = InKey - '0';
+        //console.log("DIGIT!")
+      }
+      else if (InKey == 'c') {
+        this.Reset();
+      }
+      else if (InKey == '+') {
+        //setDisplY
+        //addition and other maths
+      }
+      //this.OperandArray 
+
+
       this.SetDisplay(this.InternalTextBuffer);
-      console.log(InKey +  "     " + this.InternalTextBuffer);
+      console.log(InKey + "     " + this.InternalTextBuffer);
     }
-    
-}
 
-function RunUnitTests()
-{
-MyCalculator = new Calculator()
-MyCalculator.SetTextField( getCalculatorResultsField() )
+  }
 
-//THREE DIGIT NUMBER
-MyCalculator.PushCalculatorKey('c')
-MyCalculator.PushCalculatorKey('1')
-MyCalculator.PushCalculatorKey('2')
-MyCalculator.PushCalculatorKey('3')
+  function RunUnitTests() {
+    MyCalculator = new Calculator()
+    MyCalculator.SetTextField(getCalculatorResultsField())
 
+    //THREE DIGIT NUMBER
+    MyCalculator.PushCalculatorKey('c')
+    MyCalculator.PushCalculatorKey('1')
+    MyCalculator.PushCalculatorKey('2')
+    MyCalculator.PushCalculatorKey('3')
 
 
-//simple addition
-/*    MyCalculator.PushCalculatorKey('c')
-MyCalculator.PushCalculatorKey('1')
-MyCalculator.PushCalculatorKey('+')
-MyCalculator.PushCalculatorKey('2')
-MyCalculator.PushCalculatorKey('=')
-*/
 
-//order of operations
-/*
-MyCalculator.PushCalculatorKey('c')
-MyCalculator.PushCalculatorKey('1')
-MyCalculator.PushCalculatorKey('+')
-MyCalculator.PushCalculatorKey('2')
-MyCalculator.PushCalculatorKey('*')
-MyCalculator.PushCalculatorKey('3')
-MyCalculator.PushCalculatorKey('=')
-*/
+    //simple addition
+    /*    MyCalculator.PushCalculatorKey('c')
+    MyCalculator.PushCalculatorKey('1')
+    MyCalculator.PushCalculatorKey('+')
+    MyCalculator.PushCalculatorKey('2')
+    MyCalculator.PushCalculatorKey('=')
+    */
 
-//Double Digits and order of operations
-//15+2*3)
-/*    PushCalculatorKey('c')
-PushCalculatorKey('1')
-PushCalculatorKey('5')
-PushCalculatorKey('+')
-PushCalculatorKey('2')
-PushCalculatorKey('*')
-PushCalculatorKey('3')
-PushCalculatorKey('=')
-*/
-/*
-//3*(7+2*3)
-PushCalculatorKey('c')
-PushCalculatorKey('3')
-PushCalculatorKey('*')
-PushCalculatorKey('(')
-PushCalculatorKey('7')
-PushCalculatorKey('+')
-PushCalculatorKey('2')
-PushCalculatorKey('*')
-PushCalculatorKey('3')
-PushCalculatorKey(')')
-PushCalculatorKey('=')
-*/
+    //order of operations
+    /*
+    MyCalculator.PushCalculatorKey('c')
+    MyCalculator.PushCalculatorKey('1')
+    MyCalculator.PushCalculatorKey('+')
+    MyCalculator.PushCalculatorKey('2')
+    MyCalculator.PushCalculatorKey('*')
+    MyCalculator.PushCalculatorKey('3')
+    MyCalculator.PushCalculatorKey('=')
+    */
 
-//TODO! - ADD DECIMALS!
-}
+    //Double Digits and order of operations
+    //15+2*3)
+    /*    PushCalculatorKey('c')
+    PushCalculatorKey('1')
+    PushCalculatorKey('5')
+    PushCalculatorKey('+')
+    PushCalculatorKey('2')
+    PushCalculatorKey('*')
+    PushCalculatorKey('3')
+    PushCalculatorKey('=')
+    */
+    /*
+    //3*(7+2*3)
+    PushCalculatorKey('c')
+    PushCalculatorKey('3')
+    PushCalculatorKey('*')
+    PushCalculatorKey('(')
+    PushCalculatorKey('7')
+    PushCalculatorKey('+')
+    PushCalculatorKey('2')
+    PushCalculatorKey('*')
+    PushCalculatorKey('3')
+    PushCalculatorKey(')')
+    PushCalculatorKey('=')
+    */
 
-RunUnitTests();
+    //TODO! - ADD DECIMALS!
+  }
+
+  RunUnitTests();
 </script>
 <input type="text" id="numberBox" placeholder="numbers go here" disabled>
+<div style="width:fit-content;">
+  <button id="num:1" class="numberbutton">1</button>
+  <button id="num:1" class="numberbutton">2</button>
+  <button id="num:1" class="numberbutton">3</button>
+  <button id="num:1" class="numberbutton">4</button>
+  <button id="num:1" class="numberbutton">5</button>
+  <button id="num:1" class="numberbutton">6</button>
+  <button id="num:1" class="numberbutton">7</button>
+  <button id="num:1" class="numberbutton">8</button>
+  <button id="num:1" class="numberbutton">9</button>
+  <button id="num:1" class="numberbutton">0</button>
+</div>
