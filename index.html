@@ -74,66 +74,64 @@ class Calculator
 
 function RunUnitTests()
 {
-    MyCalculator = new Calculator()
-    MyCalculator.SetTextField( getCalculatorResultsField() )
+MyCalculator = new Calculator()
+MyCalculator.SetTextField( getCalculatorResultsField() )
 
-    //THREE DIGIT NUMBER
-    MyCalculator.PushCalculatorKey('c')
-    MyCalculator.PushCalculatorKey('1')
-    MyCalculator.PushCalculatorKey('2')
-    MyCalculator.PushCalculatorKey('3')
+//THREE DIGIT NUMBER
+MyCalculator.PushCalculatorKey('c')
+MyCalculator.PushCalculatorKey('1')
+MyCalculator.PushCalculatorKey('2')
+MyCalculator.PushCalculatorKey('3')
 
-    
 
-    //simple addition
+
+//simple addition
 /*    MyCalculator.PushCalculatorKey('c')
-    MyCalculator.PushCalculatorKey('1')
-    MyCalculator.PushCalculatorKey('+')
-    MyCalculator.PushCalculatorKey('2')
-    MyCalculator.PushCalculatorKey('=')
-    */
+MyCalculator.PushCalculatorKey('1')
+MyCalculator.PushCalculatorKey('+')
+MyCalculator.PushCalculatorKey('2')
+MyCalculator.PushCalculatorKey('=')
+*/
 
-    //order of operations
+//order of operations
 /*
-    MyCalculator.PushCalculatorKey('c')
-    MyCalculator.PushCalculatorKey('1')
-    MyCalculator.PushCalculatorKey('+')
-    MyCalculator.PushCalculatorKey('2')
-    MyCalculator.PushCalculatorKey('*')
-    MyCalculator.PushCalculatorKey('3')
-    MyCalculator.PushCalculatorKey('=')
+MyCalculator.PushCalculatorKey('c')
+MyCalculator.PushCalculatorKey('1')
+MyCalculator.PushCalculatorKey('+')
+MyCalculator.PushCalculatorKey('2')
+MyCalculator.PushCalculatorKey('*')
+MyCalculator.PushCalculatorKey('3')
+MyCalculator.PushCalculatorKey('=')
 */
 
-    //Double Digits and order of operations
-    //15+2*3)
+//Double Digits and order of operations
+//15+2*3)
 /*    PushCalculatorKey('c')
-    PushCalculatorKey('1')
-    PushCalculatorKey('5')
-    PushCalculatorKey('+')
-    PushCalculatorKey('2')
-    PushCalculatorKey('*')
-    PushCalculatorKey('3')
-    PushCalculatorKey('=')
+PushCalculatorKey('1')
+PushCalculatorKey('5')
+PushCalculatorKey('+')
+PushCalculatorKey('2')
+PushCalculatorKey('*')
+PushCalculatorKey('3')
+PushCalculatorKey('=')
 */
-    /*
-    //3*(7+2*3)
-    PushCalculatorKey('c')
-    PushCalculatorKey('3')
-    PushCalculatorKey('*')
-    PushCalculatorKey('(')
-    PushCalculatorKey('7')
+/*
+//3*(7+2*3)
+PushCalculatorKey('c')
+PushCalculatorKey('3')
+PushCalculatorKey('*')
+PushCalculatorKey('(')
+PushCalculatorKey('7')
+PushCalculatorKey('+')
+PushCalculatorKey('2')
+PushCalculatorKey('*')
+PushCalculatorKey('3')
+PushCalculatorKey(')')
+PushCalculatorKey('=')
+*/
 
-    PushCalculatorKey('+')
-    PushCalculatorKey('2')
-    PushCalculatorKey('*')
-    PushCalculatorKey('3')
-    PushCalculatorKey(')')
-    PushCalculatorKey('=')
-    */
-
-    //TODO! - ADD DECIMALS!
+//TODO! - ADD DECIMALS!
 }
 
 RunUnitTests();
-
 </script>
