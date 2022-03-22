@@ -1,5 +1,11 @@
 .numberbutton {
     padding: 1rem;
-    color: blueviolet;
+    color: black;
     background-color: chartreuse;
+}
+
+.operationbutton {
+    padding: 1rem;
+    background-color: orange;
+    color: black;
 }
