@@ -1,137 +1,162 @@
-<div class="resultParas">
-  <p class="CalculatorResultsField"></p>
-</div>
-FUFF
+<!DOCTYPE html>
+<html lang="en">
 
-<script defer>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
-  function getCalculatorResultsField() {
-    return document.querySelector('.CalculatorResultsField');
-  }
+  <link rel="stylesheet" href="index.css">
 
+  <script defer>
 
-  class Calculator {
-    constructor() {
-      this.ResultsField = null;
-      this.Reset();
+    function getCalculatorResultsField() {
+      return document.querySelector('.CalculatorResultsField');
     }
 
-    Reset() {
-      //reset the default state of the calculator
-      this.InternalTotal = 0;
-      this.InternalTextBuffer = '';
-      this.OperandArray = []
-      this.OperatorArray = []
-      this.SetDisplay(this.InternalTotal.toString());
-    }
 
-    SetDisplay(InString) {
-      if (this.ResultsField != null) {
-        this.ResultsField.textContent = InString
-      }
-    }
-
-    SetTextField(InTextField) {
-      this.ResultsField = InTextField;
-      this.SetDisplay(this.InternalTotal.toString());
-    }
-
-    PushCalculatorKey(InKey) {
-      // DO CALCULATOR WORK HERE! 
-      if ((InKey >= '0') && (InKey <= '9')) {
-        this.InternalTextBuffer += InKey;
-
-        //let IntValue = InKey - '0';
-        //console.log("DIGIT!")
-      }
-      else if (InKey == 'c') {
+    class Calculator {
+      constructor() {
+        this.ResultsField = null;
         this.Reset();
       }
-      else if (InKey == '+') {
-        //setDisplY
-        //addition and other maths
+
+      Reset() {
+        //reset the default state of the calculator
+        this.InternalTotal = 0;
+        this.InternalTextBuffer = '';
+        this.OperandArray = []
+        this.OperatorArray = []
+        this.SetDisplay(this.InternalTotal.toString());
       }
-      //this.OperandArray 
+
+      SetDisplay(InString) {
+        if (this.ResultsField != null) {
+          this.ResultsField.textContent = InString
+        }
+      }
+
+      SetTextField(InTextField) {
+        this.ResultsField = InTextField;
+        this.SetDisplay(this.InternalTotal.toString());
+      }
+
+      PushCalculatorKey(InKey) {
+        // DO CALCULATOR WORK HERE! 
+        if ((InKey >= '0') && (InKey <= '9')) {
+          this.InternalTextBuffer += InKey;
+
+          //let IntValue = InKey - '0';
+          //console.log("DIGIT!")
+        }
+        else if (InKey == 'c') {
+          this.Reset();
+        }
+        else if (InKey == '+') {
+          //setDisplY
+          //addition and other maths
+        }
+        //this.OperandArray 
 
 
-      this.SetDisplay(this.InternalTextBuffer);
-      console.log(InKey + "     " + this.InternalTextBuffer);
+        this.SetDisplay(this.InternalTextBuffer);
+        console.log(InKey + "     " + this.InternalTextBuffer);
+      }
+
     }
 
-  }
+    function RunUnitTests() {
+      MyCalculator = new Calculator()
+      MyCalculator.SetTextField(getCalculatorResultsField())
 
-  function RunUnitTests() {
-    MyCalculator = new Calculator()
-    MyCalculator.SetTextField(getCalculatorResultsField())
-
-    //THREE DIGIT NUMBER
-    MyCalculator.PushCalculatorKey('c')
-    MyCalculator.PushCalculatorKey('1')
-    MyCalculator.PushCalculatorKey('2')
-    MyCalculator.PushCalculatorKey('3')
+      //THREE DIGIT NUMBER
+      MyCalculator.PushCalculatorKey('c')
+      MyCalculator.PushCalculatorKey('1')
+      MyCalculator.PushCalculatorKey('2')
+      MyCalculator.PushCalculatorKey('3')
 
 
 
-    //simple addition
-    /*    MyCalculator.PushCalculatorKey('c')
-    MyCalculator.PushCalculatorKey('1')
-    MyCalculator.PushCalculatorKey('+')
-    MyCalculator.PushCalculatorKey('2')
-    MyCalculator.PushCalculatorKey('=')
-    */
+      //simple addition
+      /*    MyCalculator.PushCalculatorKey('c')
+      MyCalculator.PushCalculatorKey('1')
+      MyCalculator.PushCalculatorKey('+')
+      MyCalculator.PushCalculatorKey('2')
+      MyCalculator.PushCalculatorKey('=')
+      */
 
-    //order of operations
-    /*
-    MyCalculator.PushCalculatorKey('c')
-    MyCalculator.PushCalculatorKey('1')
-    MyCalculator.PushCalculatorKey('+')
-    MyCalculator.PushCalculatorKey('2')
-    MyCalculator.PushCalculatorKey('*')
-    MyCalculator.PushCalculatorKey('3')
-    MyCalculator.PushCalculatorKey('=')
-    */
+      //order of operations
+      /*
+      MyCalculator.PushCalculatorKey('c')
+      MyCalculator.PushCalculatorKey('1')
+      MyCalculator.PushCalculatorKey('+')
+      MyCalculator.PushCalculatorKey('2')
+      MyCalculator.PushCalculatorKey('*')
+      MyCalculator.PushCalculatorKey('3')
+      MyCalculator.PushCalculatorKey('=')
+      */
 
-    //Double Digits and order of operations
-    //15+2*3)
-    /*    PushCalculatorKey('c')
-    PushCalculatorKey('1')
-    PushCalculatorKey('5')
-    PushCalculatorKey('+')
-    PushCalculatorKey('2')
-    PushCalculatorKey('*')
-    PushCalculatorKey('3')
-    PushCalculatorKey('=')
-    */
-    /*
-    //3*(7+2*3)
-    PushCalculatorKey('c')
-    PushCalculatorKey('3')
-    PushCalculatorKey('*')
-    PushCalculatorKey('(')
-    PushCalculatorKey('7')
-    PushCalculatorKey('+')
-    PushCalculatorKey('2')
-    PushCalculatorKey('*')
-    PushCalculatorKey('3')
-    PushCalculatorKey(')')
-    PushCalculatorKey('=')
-    */
+      //Double Digits and order of operations
+      //15+2*3)
+      /*    PushCalculatorKey('c')
+      PushCalculatorKey('1')
+      PushCalculatorKey('5')
+      PushCalculatorKey('+')
+      PushCalculatorKey('2')
+      PushCalculatorKey('*')
+      PushCalculatorKey('3')
+      PushCalculatorKey('=')
+      */
+      /*
+      //3*(7+2*3)
+      PushCalculatorKey('c')
+      PushCalculatorKey('3')
+      PushCalculatorKey('*')
+      PushCalculatorKey('(')
+      PushCalculatorKey('7')
+      PushCalculatorKey('+')
+      PushCalculatorKey('2')
+      PushCalculatorKey('*')
+      PushCalculatorKey('3')
+      PushCalculatorKey(')')
+      PushCalculatorKey('=')
+      */
 
-    //TODO! - ADD DECIMALS!
-  }
+      //TODO! - ADD DECIMALS!
+    }
 
-  RunUnitTests();
-</script>
-<input type="text" id="numberBox" placeholder="numbers go here" disabled>
-<div style="width:fit-content;">
-  <button id="num:1" class="numberbutton">1</button>
-  <button id="num:1" class="numberbutton">2</button>
-  <button id="num:1" class="numberbutton">3</button>
-  <button id="num:1" class="numberbutton">4</button>
-  <button id="num:1" class="numberbutton">5</button>
-  <button id="num:1" class="numberbutton">6</button>
-  <button id="num:1" class="numberbutton">7</button>
-  <button id="num:1" class="numberbutton">8</button>
-  <button id="num:1" class="numberbutton">9</button>
-  <button id="num:1" class="numberbutton">0</button>
-</div>
+    RunUnitTests();
+  </script>
+</head>
+
+<body>
+  <div class="resultParas">
+    <p class="CalculatorResultsField"></p>
+  </div>
+  
+
+  <input type="text" id="numberBox" placeholder="numbers go here" disabled>
+  <div style="width:fit-content; display:inline-block;">
+    <button id="num:1" class="numberbutton">1</button>
+    <button id="num:2" class="numberbutton">2</button>
+    <button id="num:3" class="numberbutton">3</button><br>
+    <button id="num:4" class="numberbutton">4</button>
+    <button id="num:5" class="numberbutton">5</button>
+    <button id="num:6" class="numberbutton">6</button><br>
+    <button id="num:7" class="numberbutton">7</button>
+    <button id="num:8" class="numberbutton">8</button>
+    <button id="num:9" class="numberbutton">9</button><br>
+    <div style="display: grid; place-items: center; width: 100%;">
+      <button id="num:0" class="numberbutton">0</button>
+    </div>
+  </div>
+ <div> <button id="operation:+" class="operationbutton">+</button>
+  <button id="operation:-" class="operationbutton">-</button>
+  <button id="operation:/" class="operationbutton">/</button>
+  <button id="operation:*" class="operationbutton">*</button>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>

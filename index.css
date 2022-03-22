@@ -1,3 +1,5 @@
 .numberbutton {
-    display: flex;
+    padding: 1rem;
+    color: blueviolet;
+    background-color: chartreuse;
 }

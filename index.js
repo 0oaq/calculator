@@ -9,3 +9,6 @@ calc.push('+', 12);
 console.log(calc);
 for(const calcs of calc);
 console.log(calc);
+document.getElementById("num:1").addEventListener("click", () => {
+    document.getElementById("numberBox").value += "1"
+})
