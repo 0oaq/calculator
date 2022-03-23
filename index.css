@@ -9,3 +9,8 @@
     background-color: orange;
     color: black;
 }
+.enterbutton {
+    padding: 1rem;
+    color: black;
+    background-color: blue;
+}

@@ -51,3 +51,21 @@ document.getElementById("operation:/").addEventListener("click", () => {
 document.getElementById("operation:*").addEventListener("click", () => {
     document.getElementById("numberBox").value += "*"
 })
+const addition = 0;
+const subtraction = 1;
+const multiplication = 2;
+const division = 3;
+
+const operation_string = [];
+operation_string[addition] = "+"
+operation_string[subtraction] = "-"
+operation_string[multiplication] = "*"
+operation_string[division] = "/"
+
+const importance = [];
+importance[addition] = 0
+importance[subtraction] = 0
+importance[multiplication] = 1
+importance[division] = 1
+
+function 
