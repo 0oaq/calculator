@@ -70,4 +70,5 @@ function onEnterClick(enter) {
 
 function onClearClick(clear) {
     numberbox.value = ""
+    storage = []
 }
