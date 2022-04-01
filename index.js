@@ -59,7 +59,7 @@ function onEnterClick(enter) {
         let operandLeft = parseFloat(newarray.split(_operator)[0])
         let operandRight = parseFloat(newarray.split(_operator)[1])
         if (_operator === "+"){
-            numberbox.value = operandLeft + operandRight
+            numberbox.value = parseFloat(newarray.split(_operator)[0]) + parseFloat(newarray.split(_operator)[1])
         } else if (_operator === "-"){
             numberbox.value = parseFloat(newarray.split(_operator)[0]) - parseFloat(newarray.split(_operator)[1])
         } else if (_operator === "*"){
