@@ -6,7 +6,7 @@ if (calc.includes('+')) {
     calc.push('+', 12);
 }
 console.log(calc);
-for (const calcs of calc) {};
+for (const calcs of calc) { };
 console.log(calc);
 
 const addition = 0;
@@ -33,13 +33,17 @@ let operatorAdded = false
 const numberbox = document.getElementById("numberBox")
 
 function onNumberClick(number) {
-    if (operatorAdded) {
-        operatorAdded = false
-        numberbox.value = ""
+    if (operatorAdded = false) {
+        numberbox.value += ""
+
     }
+
     storage.push(number)
     numberbox.value += number;
 }
+
+
+
 
 // operator functions
 let _operator = ""
@@ -49,30 +53,31 @@ function onOperatorClick(operator) {
     operatoradded = true;
 }
 
+
 function setOperator(operator) {
     _operator = operator
 }
 
 function operatorSet(operator) {
     setOperator(operator)
-    numberbox.value += operator
+    numberbox.value = operator
     onOperatorClick(operator)
 }
 
 // submit
 function onEnterClick(enter) {
     let newarray = storage.join("")
-   
+
     if (newarray.split(_operator)[1]) {
         let operandLeft = parseFloat(newarray.split(_operator)[0])
         let operandRight = parseFloat(newarray.split(_operator)[1])
-        if (_operator === "+"){
+        if (_operator === "+") {
             numberbox.value = parseFloat(newarray.split(_operator)[0]) + parseFloat(newarray.split(_operator)[1])
-        } else if (_operator === "-"){
+        } else if (_operator === "-") {
             numberbox.value = parseFloat(newarray.split(_operator)[0]) - parseFloat(newarray.split(_operator)[1])
-        } else if (_operator === "*"){
+        } else if (_operator === "*") {
             numberbox.value = parseFloat(newarray.split(_operator)[0]) * parseFloat(newarray.split(_operator)[1])
-        } else if (_operator === "/"){
+        } else if (_operator === "/") {
             numberbox.value = parseFloat(newarray.split(_operator)[0]) / parseFloat(newarray.split(_operator)[1])
         }
     }
