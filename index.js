@@ -41,6 +41,7 @@ function onNumberClick(number) {
     numberbox.value += number;
 }
 
+// operator functions
 let _operator = ""
 
 function onOperatorClick(operator) {
@@ -52,6 +53,13 @@ function setOperator(operator) {
     _operator = operator
 }
 
+function operatorSet(operator) {
+    setOperator(operator)
+    numberbox.value += operator
+    onOperatorClick(operator)
+}
+
+// submit
 function onEnterClick(enter) {
     let newarray = storage.join("")
    
@@ -70,6 +78,7 @@ function onEnterClick(enter) {
     }
 }
 
+// clear
 function onClearClick(clear) {
     numberbox.value = ""
     storage = []
